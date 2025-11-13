@@ -1,0 +1,41 @@
+FEATURES IMPLEMENTED
+==================
+
+A-LEVEL FEATURES (Exercises 8.20-8.30):
+---------------------------------------
+✓ 8.20 - Player class with current room tracking
+✓ 8.21 - Take and drop commands for item management
+✓ 8.22 - Items command to display player inventory
+✓ 8.23 - Back command implementation for room navigation
+✓ 8.24 - Multiple items per room support
+✓ 8.25 - Item weights with proper weight tracking
+✓ 8.26 - Stack-based back command for proper LIFO behavior
+✓ 8.27 - Weight-based carrying restrictions (5kg limit)
+✓ 8.28 - Enhanced items command with weight display
+✓ 8.29 - Back command with empty stack handling
+✓ 8.30 - Multiple consecutive back commands support
+
+EXTRA CREDIT FEATURES (Exercises 8.31-8.33):
+--------------------------------------------
+✓ 8.31 - Weight limit system with capacity enforcement
+✓ 8.32 - Enhanced items command showing total weight and remaining capacity
+✓ 8.33 - Magic cookie system that increases carrying capacity when consumed
+
+TECHNICAL IMPLEMENTATION DETAILS:
+---------------------------------
+• Player class uses Stack<Room> for room history (proper LIFO behavior)
+• Player class uses ArrayList<Item> for inventory management
+• Room class supports multiple items with ArrayList<Item>
+• Weight system prevents picking up items that exceed capacity
+• Magic cookie increases capacity from 5kg to 7kg when eaten
+• Comprehensive error handling for all edge cases
+• Full Javadoc documentation for all classes and methods
+
+GAME WORLD:
+-----------
+• 9 interconnected rooms with proper exit connections
+• 15 different items distributed throughout the world
+• Items have realistic weights ranging from 0.005kg to 2.5kg
+• Special magic cookie item with capacity-enhancing properties
+
+All features have been thoroughly tested and are fully functional.

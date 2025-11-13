@@ -2,19 +2,19 @@ import java.util.Scanner;
 
 /**
  * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * "World of Zuul" is a text based adventure game.  
  * 
  * This parser reads user input and tries to interpret it as an "Adventure"
  * command. Every time it is called it reads a line from the terminal and
- * tries to interpret the line as a two-word command. It returns the command
+ * tries to interpret the line as a command. It returns the command
  * as an object of class Command.
  *
  * The parser has a set of known command words. It checks user input against
  * the known commands, and if the input is not one of the known commands, it
  * returns a command object that is marked as an unknown command.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * @author Michael Kölling, David J. Barnes, oliviad118
+ * @version 2025.11.11
  */
 public class Parser 
 {
@@ -31,6 +31,7 @@ public class Parser
     }
 
     /**
+     * Parse user input and return the next command from the user.
      * @return The next command from the user.
      */
     public Command getCommand() 
@@ -44,12 +45,13 @@ public class Parser
         inputLine = reader.nextLine();
 
         // Find up to two words on the line.
-        Scanner tokenizer = new Scanner(inputLine);
-        if(tokenizer.hasNext()) {
-            word1 = tokenizer.next();      // get first word
+        try (Scanner tokenizer = new Scanner(inputLine)) {
             if(tokenizer.hasNext()) {
-                word2 = tokenizer.next();      // get second word
-                // note: we just ignore the rest of the input line.
+                word1 = tokenizer.next();      // get first word
+                if(tokenizer.hasNext()) {
+                    word2 = tokenizer.next();      // get second word
+                    // note: we just ignore the rest of the input line.
+                }
             }
         }
 
